@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 import datetime
 import sys
-sys.path.append(r"C:\My Files\Projects\Lyft V-Internship\forage-lyft-starter-repo\engine")
+#sys.path.append(r"C:\My Files\Projects\Lyft V-Internship\forage-lyft-starter-repo\engine")
 sys.path.append(r"C:\My Files\Projects\Lyft V-Internship\forage-lyft-starter-repo\battery")
 sys.path.append(r"C:\My Files\Projects\Lyft V-Internship\forage-lyft-starter-repo")
-from engine import engine 
+from engine.capulet_engine import capulet_engine
 from battery import battery
 from car import Car
         
@@ -15,7 +15,7 @@ class car_factory():
         current_date = datetime.datetime.strptime(current_date, "%Y-%m-%d")
         last_service_date = datetime.datetime.strptime(last_service_date, "%Y-%m-%d")
         calliope.car_battery = battery.spindler_battery(current_date, last_service_date)
-        calliope.car_engine = engine.capulet_engine(current_mileage, last_service_mileage)
+        calliope.car_engine = capulet_engine(current_mileage, last_service_mileage)
         return calliope
         
     def create_glissade(current_date, last_service_date, current_mileage, last_service_mileage):

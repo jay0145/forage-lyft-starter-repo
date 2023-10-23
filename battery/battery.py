@@ -1,16 +1,16 @@
 from abc import ABC
 import datetime
 
-class battery():
+class Battery():
     def needs_service():
         pass
     
-class spindler_battery(battery):
+class spindler_battery(Battery):
     def __init__(self, current_date, last_service_date):
         self.last_service_date = last_service_date
         self.current_date = current_date
     
-    def needs_service():
+    def needs_service(self):
         self.current_date = datetime.datetime.now()
         difference = self.current_date - self.last_service_date
         unserviced_period = difference.days
@@ -19,13 +19,14 @@ class spindler_battery(battery):
         else:
             return False
 
-class nubbin_battery(battery):
+class nubbin_battery(Battery):
     
     def __init__(self, current_date, last_service_date):
         self.last_service_date = last_service_date
         self.current_date = current_date
     
-    def needs_service():
+    def needs_service(self):
+        pass
         self.current_date = datetime.datetime.now()
         difference = self.current_date - self.last_service_date
         unserviced_period = difference.days
