@@ -14,7 +14,7 @@ class spindler_battery(Battery):
         self.current_date = datetime.datetime.now()
         difference = self.current_date - self.last_service_date
         unserviced_period = difference.days
-        if unserviced_period >= 730:
+        if unserviced_period > 1095: #3 years
             return True
         else:
             return False
@@ -30,7 +30,7 @@ class nubbin_battery(Battery):
         self.current_date = datetime.datetime.now()
         difference = self.current_date - self.last_service_date
         unserviced_period = difference.days
-        if unserviced_period >= 1460:
+        if unserviced_period > 1460: #4 years
             return True
         else:
             return False
