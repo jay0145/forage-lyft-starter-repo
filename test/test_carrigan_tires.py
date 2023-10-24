@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append(r'C:\My Files\Projects\Lyft V-Internship\forage_lyft_starter_repo_jay')#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+sys.path.append(r'C:\My Files\Projects\Lyft V-Internship\forage_lyft_starter_repo_jay')
 from tires.carrigan_tires import CarriganTires
 
 class TestCarriganTires(unittest.TestCase):
